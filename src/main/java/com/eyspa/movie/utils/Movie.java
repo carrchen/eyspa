@@ -39,7 +39,7 @@ public class Movie
         final ArrayList<VideoObj> vos = new ArrayList<VideoObj>();
         final Document doc = Jsoup.connect(url).get();
         final Elements es = doc.getElementsByClass("rank");
-        for (int j = 0; j < 5; ++j) {
+        for (int j = 0; j < es.size(); ++j) {
             final String[] ss = es.get(j).toString().split("<li class=\"rank-item\">");
             for (int i = 1; i < ss.length; ++i) {
                 String pai = "";
