@@ -1,0 +1,105 @@
+@charset "gb2312";
+
+
+/**/
+body{
+	font: 14px "微软雅黑", Arial, Helvetica, sans-serif;
+    background: url(../images/top.jpg) no-repeat center top #075498;
+    color: #fff;
+    
+}
+/*搜索框*/
+.form{ 
+	float: right;
+	margin-top: 50px;  
+	margin-right: 20px;
+}
+
+/*类型索引----电视剧，电影，综艺，动漫*/
+.tab{
+	margin-bottom: 10px;
+	margin-left:66px;
+	font: 22px "微软雅黑", Arial, Helvetica, sans-serif;
+	float: left;
+}
+.tab a{
+	 margin-left:25px;
+	 display: inline-block;
+	 text-decoration: none;
+	 color:#fff;
+	 z-index: 2;
+}
+/*加载爬取的分类下的类型的样式*/
+.category{
+	margin-left: 20px;
+	height: 40px;
+	text-align: center;
+}
+.category a{
+	text-decoration:none;
+	color: black;
+	
+}
+/*加载爬出来的内容的显示样式*/
+.box{
+	margin: 50px;
+	float: left;
+}
+
+.whole{
+	/*border:solid red;*/
+	border:thin;
+	background-color:#fff;
+	width:170px;
+	height:290px;
+	margin:5px;
+	float: left;
+} 
+	
+
+.whole img{
+	 width:170px;
+	 height:220px;	
+	 background-image: url("../images/imgBackground.png");
+}
+
+.whole a{
+	text-decoration: none;
+}
+.whole em{
+	color: blue;
+}
+/*页码样式*/
+.page a{
+	 border:1px solid #e6e6e6;
+	 margin-top:20px;
+	 margin-left:2px;
+	 display: inline-block;
+	 width: 26px;
+	 height: 26px;
+	 line-height: 26px;
+	 background-color: #fff;
+	 text-align: center;
+     margin: 0,4px;
+	 color: #222;
+	 text-decoration: none;
+}
+.page current a{
+	color:white;
+	background-color: gray;
+}	    
+.next a,
+.prev a{
+	border:1px solid #e6e6e6;
+	        margin-top:20px;
+	        margin-left:2px;
+	        display: inline-block;
+	        width: 62px;
+	        height: 26px;
+	        line-height: 26px;
+	        background-color: #fff;
+	        text-align: center;
+	        margin: 0,4px;
+	        color: #222;
+	        text-decoration: none;
+}

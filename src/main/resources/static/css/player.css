@@ -1,0 +1,88 @@
+body{
+	
+}
+.top{
+	width: 100%;
+	background-color: #2e2e36;
+	height: 700px;
+}
+/*播放器*/
+.player{
+     margin-top:46px;
+     margin-left:40px; 
+     position: static;
+}
+/*电视剧，动漫剧集*/
+.episode{
+    padding-top: 1px;
+    margin:28px;
+    width:200px;
+    height:553px;
+    overflow: auto;
+    background: #8cbbb5;
+}
+/*剧集中的集数链接*/
+.episode other a{
+	background: #8cbbb5;
+}
+.episode noc a{
+	border:1px solid #e6e6e6;
+	display: inline-block;
+	margin-top:2px;
+	margin-left:5px;
+	width: 33px;
+	height: 33px;
+	line-height: 33px;
+	background-color: #fff;
+	text-align: center;
+	margin: 0,4px;
+	color: #222;
+	text-decoration: none;
+}
+.episode current a{
+	border:1px solid #e6e6e6;
+	display: inline-block;
+	margin-top:2px;
+	margin-left:5px;
+	width: 33px;
+	height: 33px;
+	line-height: 33px;
+	background-color: #2e2e36;
+	text-align: center;
+	margin: 0,4px;
+	text-decoration: none;
+	color: #f00
+}
+.zongyi{
+	margin:28px;
+	width:200px;
+	height:553px;
+	overflow: auto;
+    background: #8cbbb5;
+}
+.zongyi a{
+		text-decoration: none;
+		display: inline-block;
+		border:1px solid #e6e6e6;
+		color: #222;
+		background-color: #fff;
+		line-height: 36px;
+		text-align: center;
+		margin: 0,4px;
+		margin-left:20px;
+		width: 120px;
+	
+}
+.title{
+	position: relative;
+    z-index: 2;
+    font-size: 22px;
+    line-height: 32px;
+    margin: 0 58px 0 0;
+    font-weight: 500;
+    color: #fff;
+}
+des{
+	font-size: 15px;
+	color: red;
+}
