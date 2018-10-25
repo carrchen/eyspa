@@ -2,7 +2,7 @@ package com.eyspa.movie.bean;
 
 public class Category {
 
-    private String id;
+    private String id;//www.longqcloud.cn/LongVideos
     private String url;
     private String name;
 
