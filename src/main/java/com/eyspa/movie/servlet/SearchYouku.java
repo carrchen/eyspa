@@ -1,4 +1,4 @@
-package com.eyspa.movie.controller;
+package com.eyspa.movie.servlet;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

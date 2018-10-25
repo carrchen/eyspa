@@ -83,7 +83,7 @@ public class Movie
             final String uu = ss.substring(ss.indexOf("<a href=\"") + 9, ss.indexOf("\" class=\"g-playicon"));
             final String img = ss.substring(ss.indexOf("<img src=\"") + 10, ss.indexOf("\" alt=\""));
             final String name = ss.substring(ss.indexOf("title=\"") + 7, ss.indexOf("\" data-logger=\"ctype"));
-            final String type = ss.substring(ss.indexOf("<span class=\"playtype\">") + 24, ss.indexOf("]</span>"));
+            final String type = ss.substring(ss.indexOf("<span class=\"playtype\">") + 24, ss.indexOf("</span>"));
             final SimInfo si = new SimInfo();
             si.setUrl(uu);
             si.setImg(img);

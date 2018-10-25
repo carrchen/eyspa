@@ -1,8 +1,8 @@
 <%@page import="org.jsoup.Jsoup"%>
 <%@page import="org.jsoup.select.Elements"%>
 <%@page import="org.jsoup.nodes.Document"%>
-<%@page import="utils.Movie"%>
-<%@page import="bean.SimInfo"%>
+<%@page import="com.eyspa.movie.utils.Movie"%>
+<%@page import="com.eyspa.movie.bean.SimInfo"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
@@ -62,7 +62,7 @@ String kw=request.getParameter("v_name");//关键字
 			}
 			%>
 			<div class='whole'>
-			   <a href="/player.jsp?type=<%=typ%>&url=<%=url%>" target='_blank'>
+			   <a href="/player?type=<%=typ%>&url=<%=url%>" target='_blank'>
 			   <img src="<%=img%>" alt="<%=name%>" title="<%=name%>"><br>
 			   <span>片名:<%=name%></span><br><span>类型:<%=type%></span></a>
 			</div>

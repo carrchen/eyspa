@@ -1,4 +1,4 @@
-package com.eyspa.movie;
+package com.eyspa.movie.utils;
 
 
 public class HandleString
@@ -33,7 +33,6 @@ public class HandleString
         {
             StringBuilder sb = new StringBuilder(s);
 
-            return sb.delete(0, 14).delete(47, 49).toString();
         }
         return null;
     }
