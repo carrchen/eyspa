@@ -1,4 +1,4 @@
-package com.eyspa.movie.controller;
+package com.eyspa.movie.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

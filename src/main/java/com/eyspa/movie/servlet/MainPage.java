@@ -1,4 +1,4 @@
-package com.eyspa.movie.controller;
+package com.eyspa.movie.servlet;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -90,7 +90,7 @@ public class MainPage extends HttpServlet
         out.println("</HEAD>");
         out.println("  <BODY>");
         out.println("<div class='bar'>");
-        out.println("<form action=\"/search.jsp\" method=\"post\" target=\"_blank\"><ul>");
+        out.println("<form action=\"/search\" method=\"post\" target=\"_blank\"><ul>");
         out.println("<li><img src = \"images/logo.png\" style=\"width:40px;\"></img></li>");//<a>eyspa影院</a>
         if (type.equals("all")) {
             out.println("<li><current><a href='/MainPage?type=all&cate=all&page=1'>首页</a></current></li>");
@@ -162,7 +162,7 @@ public class MainPage extends HttpServlet
                 else {
                     name2 = hot[j].substring(hot[j].indexOf("class=\"s1") + 11, hot[j].indexOf("</span></p"));
                 }
-                out.write("<div class='whole'><a href=\"/player.jsp?type=dianying&url=" + href + "\" target='_blank'>" + "<img src='" + img + "' title='" + name2 + "' alt='" + img + "'>" + "<span>" + name2 + "</span><br><span>" + score + "</span></a></div>");
+                out.write("<div class='whole'><a href=\"/player?type=dianying&url=" + href + "\" target='_blank'>" + "<img src='" + img + "' title='" + name2 + "' alt='" + img + "'>" + "<span>" + name2 + "</span><br><span>" + score + "</span></a></div>");
             }
             final ArrayList<VideoObj> vos = Movie.getdata(main);
             System.out.println(vos.size());
@@ -193,7 +193,7 @@ public class MainPage extends HttpServlet
                     name3 = String.valueOf(name3.substring(0, 5)) + "...";
                 }
                 final String purl = Movie.getPUrl(href2);
-                out.write("<pai>" + pai + "</pai>&nbsp;<a href=\"/player.jsp?type=dianshi&url=" + href2 + "&href=" + purl + "\" target='_blank'>" + name3 + "</a>&nbsp;" + vo.getPn() + "<br>");
+                out.write("<pai>" + pai + "</pai>&nbsp;<a href=\"/player?type=dianshi&url=" + href2 + "&href=" + purl + "\" target='_blank'>" + name3 + "</a>&nbsp;" + vo.getPn() + "<br>");
             }
             out.write("</div>");
             out.write("<div class='rank'>");
@@ -208,7 +208,7 @@ public class MainPage extends HttpServlet
                     name3 = String.valueOf(name3.substring(0, 5)) + "...";
                 }
                 final String purl = Movie.getPUrl(href2);
-                out.write("<pai>" + pai + "</pai>&nbsp;<a href=\"/player.jsp?type=zongyi&url=" + vo.getHref() + "&href=" + purl + "\" target='_blank'>" + name3 + "</a>&nbsp;" + vo.getPn() + "<br>");
+                out.write("<pai>" + pai + "</pai>&nbsp;<a href=\"/player?type=zongyi&url=" + vo.getHref() + "&href=" + purl + "\" target='_blank'>" + name3 + "</a>&nbsp;" + vo.getPn() + "<br>");
             }
             out.write("</div>");
             out.write("<div class='rank'>");
@@ -223,12 +223,14 @@ public class MainPage extends HttpServlet
                     name3 = String.valueOf(name3.substring(0, 5)) + "...";
                 }
                 final String purl = Movie.getPUrl(href2);
-                out.write("<pai>" + pai + "</pai>&nbsp;<a href=\"/player.jsp?type=dianying&url=" + vo.getHref() + "&href=" + purl + "\" target='_blank'>" + name3 + "</a>&nbsp;" + vo.getPn() + "<br>");
+                out.write("<pai>" + pai + "</pai>&nbsp;<a href=\"/player?type=dianying&url=" + vo.getHref() + "&href=" + purl + "\" target='_blank'>" + name3 + "</a>&nbsp;" + vo.getPn() + "<br>");
             }
             out.write("</div>");
             out.write("<div class='rank'>");
             out.write("<br>动漫排行榜<br>");
             for (int k = 40; k < 50; ++k) {
+                if(k>= vos.size())
+                    continue;
                 final VideoObj vo = vos.get(k);
                 final int pai = vo.getPai();
                 String name3 = vo.getName();
@@ -238,7 +240,7 @@ public class MainPage extends HttpServlet
                     name3 = String.valueOf(name3.substring(0, 5)) + "...";
                 }
                 final String purl = Movie.getPUrl(href2);
-                out.write("<pai>" + pai + "</pai>&nbsp;<a href=\"/player.jsp?type=dongman&url=" + vo.getHref() + "&href=" + purl + "\" target='_blank'>" + name3 + "</a>&nbsp;" + vo.getPn() + "<br>");
+                out.write("<pai>" + pai + "</pai>&nbsp;<a href=\"/player?type=dongman&url=" + vo.getHref() + "&href=" + purl + "\" target='_blank'>" + name3 + "</a>&nbsp;" + vo.getPn() + "<br>");
             }
             out.write("</div>");
         }
@@ -284,7 +286,7 @@ public class MainPage extends HttpServlet
                 if (actor.equals("")) {
                     actor = "暂无";
                 }
-                out.write("<div class='whole'><a href=\"/player.jsp?type=" + type + "&url=" + hre2 + "\" target='_blank'>" + "<img src='" + src + "' title='" + name4 + "' alt='" + src + "'>" + "<span>" + name4 + "</span><br><p>" + actor + "</p></a></div>");
+                out.write("<div class='whole'><a href=\"/player?type=" + type + "&url=" + hre2 + "\" target='_blank'>" + "<img src='" + src + "' title='" + name4 + "' alt='" + src + "'>" + "<span>" + name4 + "</span><br><p>" + actor + "</p></a></div>");
             }
             out.write("<center><div class='page'>");
             if (pageI > 1) {
@@ -317,9 +319,9 @@ public class MainPage extends HttpServlet
         }
         out.write("<hr width='80%' height='5px'>");
         out.write("<br>");
-        out.write("<center><p>All Rights Reserved 版权所有：<a href=\"http://www.longqcloud.cn/\" target=\"_blank\">eyspa影院</a> 备案号：<a href=\"http://www.miitbeian.gov.cn\" target=\"_blank\">豫ICP备16023798号-1</a></p></center>");
-        out.write("<center><p>本站所有视频均采集自互联网，如有侵犯贵公司合法权益，请联系QQ<a href=\"http://wpa.qq.com/msgrd?v=3&uin=1459892910&site=qq&menu=yes\" target=\"_blank\">1459892910</a>删除，谢谢</p></center>");
-        out.write("<center><p>Designed by Long Bro</p></center>");
+        out.write("<center><p>All Rights Reserved 版权所有：<a href=\"http://www.eyspa.com/\" target=\"_blank\">eyspa影院</a> </p></center>");//备案号：<a href="http://www.miitbeian.gov.cn" target="_blank">豫ICP备16023798号-1</a>
+        out.write("<center><p>本站所有视频均采集自互联网，如有侵犯贵公司合法权益，请联系邮箱<a href=\"#\">business@eyspa.com</a>删除，谢谢</p></center>");//http://wpa.qq.com/msgrd?v=3&uin=1459892910&site=qq&menu=yes" target="_blank
+        out.write("<center><p>Designed by eyspa</p></center>");
         out.println("  </BODY>");
         out.println("</HTML>");
         out.flush();

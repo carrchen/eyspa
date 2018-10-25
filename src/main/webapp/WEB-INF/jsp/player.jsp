@@ -1,4 +1,4 @@
-<%@page import="utils.Movie"%>
+<%@page import="com.eyspa.movie.utils.Movie"%>
 <%@page import="org.jsoup.nodes.Element"%>
 <%@page import="org.jsoup.select.Elements"%>
 <%@page import="org.jsoup.Jsoup"%>
@@ -116,9 +116,9 @@ String hre=request.getParameter("href");
 		     for(int i=1;i<hs.length;i++){
 			   u=hs[i].substring(0,hs[i].indexOf("\">"));
 			   if(u.equals(hre)){//当前播放
-			       out.write("<current><a href='/player.jsp?type="+type+"&url="+url+"&href="+u+"'>"+i+"</a></current>&emsp;");
+			       out.write("<current><a href='/player?type="+type+"&amp;url="+url+"&amp;href="+u+"'>"+i+"</a></current>&emsp;");
 			   }else{
-			       out.write("<noc><a href='/player.jsp?type="+type+"&url="+url+"&href="+u+"'>"+i+"</a></noc>&emsp;");
+			       out.write("<noc><a href='/player?type="+type+"&amp;url="+url+"&amp;href="+u+"'>"+i+"</a></noc>&emsp;");
 			   }
 			   //每行八集
 			   if(i%3==0){
@@ -173,7 +173,7 @@ String hre=request.getParameter("href");
 		         out.println("<des>"+name+"</des>");
 		     }
 		     String pu=Movie.getPUrl(url);//根据视频的链接获取播放链接
-		     out.println("<br><br><a href='/player.jsp?type="+type+"&url="+url+"&href="+pu+"'>点此播放</a></div>");
+		     out.println("<br><br><a href='/player?type="+type+"&amp;url="+url+"&amp;href="+pu+"'>点此播放</a></div>");
 		   }else if(type.equals("zongyi")){
 		   		out.println("<br><em class='title'>"+title+"</em><br>");
 		        //爬取综艺节目的详细信息
@@ -214,7 +214,7 @@ String hre=request.getParameter("href");
 			         //期别日期
 			         String date=s9[i].substring(s9[i].indexOf("<span class=\"w-newfigure-hint\">")+31,s9[i].indexOf("</span>"));
 
-			         out.println("<a href='/player.jsp?type="+type+"&url="+url+"&href="+pu+"' title='"+stage+"'>"+date+"</a><br>");
+			         out.println("<a href='/player.jsp?type="+type+"&amp;url="+url+"&amp;href="+pu+"' title='"+stage+"'>"+date+"</a><br>");
 		             
 		        }
 		   }
