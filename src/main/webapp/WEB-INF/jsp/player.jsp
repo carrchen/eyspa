@@ -29,7 +29,7 @@ String hre=request.getParameter("href");
   </head>
   
   <body>
-         <div class="top"><iframe src='http://api.baiyug.cn/vip/?url=<%=hre %>' class="player" width=66% height="550px" align="left"></iframe><br>
+         <div class="top"><iframe src='http://app.baiyug.cn:2019/vip/index.php?url=<%=hre %>' class="player" width=66% height="550px" align="left"></iframe><br>
          <!-- http://beaacc.com/api.php?url=-->
          <!-- http://player.jidiaose.com/supapi/iframe.php?v= -->
          <!-- http://y.mt2t.com/lines?url= -->

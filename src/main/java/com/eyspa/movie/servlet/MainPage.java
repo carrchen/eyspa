@@ -21,6 +21,7 @@ public class MainPage extends HttpServlet
     private static final Logger log = LoggerFactory.getLogger(MainPage.class);
 
     public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
+        //<!--//http://www.longqcloud.cn/LongVideos-->
         response.setContentType("text/html");
         String type = request.getParameter("type");
         final String cate = request.getParameter("cate");
