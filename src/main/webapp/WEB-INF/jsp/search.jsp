@@ -1,9 +1,7 @@
-<%@page import="org.jsoup.Jsoup"%>
-<%@page import="org.jsoup.select.Elements"%>
-<%@page import="org.jsoup.nodes.Document"%>
-<%@page import="com.eyspa.movie.utils.Movie"%>
 <%@page import="com.eyspa.movie.bean.SimInfo"%>
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@page import="com.eyspa.movie.utils.Movie"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -26,7 +24,7 @@ String kw=request.getParameter("v_name");//关键字
   
   <body>
      <div class='bar'>
-       <form action="/search.jsp" method="post" target="_blank">
+       <form action="/search" method="post" target="_blank">
          <ul>
             <li><a>eyspa影院</a></li>
             <li><a href='/MainPage?type=all&cate=all&page=1'>首页</a></li>
